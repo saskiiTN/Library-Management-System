@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Bibliothèque</title>
+<style>
+    #menuContainer{
+        padding: 15px;
+        padding-bottom: 35px;
+        border : solid gray 2px;
+        height: 400px;
+        width: 400px;
+        margin: auto;
+    }
+    .menuButton{
+        height: 50px;
+        width: 100%;
+        color:aliceblue;
+        background-color: rgb(33, 122, 247);
+        border: none;
+        border-radius: 8px;
+    }
+    .menuButton:hover{
+        background-color: rgba(33, 122, 247, 0.81);
+    }
+</style>
+</head>
+<body>
+    <div id="menuContainer">
+    <hr>
+    <h1>Menu : Gestion Bibliothèque</h1>
+    <h3>Ajouter des livres</h3>
+    <h3>Ajouter des auteurs</h3>
+    <h4>Affectation des auteurs aux livres</h4>
+    <hr>
+    <a href="/auteurs">
+    <button class="menuButton">📚 Gérer les Auteurs</button>
+    </a>
+
+    <br><br>
+
+    <a href="/livres">
+    <button class="menuButton">📖 Gérer les Livres</button>
+    </a>
+
+    <br><br>
+
+    <a href="/affectation">
+    <button class="menuButton">🔗 Affecter Auteurs aux Livres</button>
+    </a>
+    </div>
+    
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Gestion des Auteurs</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .inputStyle{
+            border:solid rgb(207, 207, 207) 1px;
+            width: 500px;
+            height: 25px;
+            border-radius: 5px;
+            margin-block: 10px;
+        }
+        .mainContainer{
+            margin: auto;
+            padding: 20px;
+            border: solid black 1px;
+            width: 600px;
+        }
+        .GreenButton{
+            height: 35px;
+            width: 80px;
+            color:white;
+            background-color: #04AA6D;
+            border-radius: 5px;
+            border: none;
+        }
+        table,th,td{
+            border: 1px solid rgb(178, 177, 177);
+            border-collapse: collapse;
+            text-align: left;
+        }
+        th{
+            
+            background-color: rgb(222, 222, 222);
+            
+        }
+        th,th{
+            padding-inline: 15px;
+            height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="mainContainer">
+    <h2>Gestion des Auteurs</h2>
+
+    <form th:action="@{/auteurs/add}" th:object="${auteur}" method="post">
+
+        Nom et Prenom :<br>
+        <input class="inputStyle" type="text" th:field="*{nomPrenom}" required>
+        <br>
+        <button class="GreenButton" type="submit">Ajouter</button>
+
+    </form>
+
+    <hr>
+
+    <h2>Liste des Auteurs</h2>
+
+    <table border="1">
+
+    <tr style="border: solid black 1px;">
+    <th style="width: 70px;">ID</th>
+    <th style="width: 300px;">Nom Prenom</th>
+    <th style="width: 120px;">Points</th>
+    </tr>
+
+    <tr th:each="auteur : ${auteurs}">
+    <td th:text="${auteur.id}"></td>
+    <td th:text="${auteur.nomPrenom}"></td>
+    <td th:text="${auteur.nombrePoint}"></td>
+    </tr>
+
+</table>
+
+<a href="/">Retour au menu</a>
+</div>
+</body>
+</html>
